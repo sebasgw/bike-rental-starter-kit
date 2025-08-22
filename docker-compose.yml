@@ -2,6 +2,8 @@ services:
   python-env:
     build: .
     container_name: biker_env
+    env_file:
+      - .env
     volumes: 
       - .:/scripts
     ports:
