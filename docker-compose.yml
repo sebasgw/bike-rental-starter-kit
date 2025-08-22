@@ -1,0 +1,21 @@
+services:
+  python-env:
+    build: .
+    container_name: biker_env
+    volumes: 
+      - .:/scripts
+    ports:
+      - "8888:8888"
+
+  database:
+    # Official Postgres image from DockerHub (we use the last version)
+    image: 'postgres:latest'
+    container_name: biker_db
+    ports:
+      - 5432:5432
+
+    env_file:
+      - .env 
+
+    volumes:
+    - ./postgres_data:/var/lib/postgresql/data/
