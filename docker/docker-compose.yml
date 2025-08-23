@@ -5,7 +5,7 @@ services:
     env_file:
       - .env
     volumes: 
-      - .:/scripts
+      - ../.:/scripts
     ports:
       - "8888:8888"
 
@@ -17,4 +17,4 @@ services:
     env_file:
       - .env 
     volumes:
-    - ./postgres_data:/var/lib/postgresql/data/
+    - ../postgres_data:/var/lib/postgresql/data/
