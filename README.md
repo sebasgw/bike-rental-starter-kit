@@ -1,7 +1,7 @@
 ## 🧑‍💻 Codecademy Data Engineering Project 
 
 ---
-### 📖 General overview
+### 📖 Overview
 This repository contains a project created as part of the **Codecademy Data Engineering Career Path**.  
 It is intended for **educational purposes only** and demonstrates concepts learned during the course.
 
@@ -31,38 +31,44 @@ All datasets and examples are for **learning and practice purposes only**.
 - VS Code
 - Jupyter Notebook  
 
-![Architecture diagram](images/data_pipeline_placeholder.png)
-
-> **Note:** Replace `data_pipeline_placeholder.png` with your actual diagram file in the `images` folder.
-
+![general_architecture](images/general_architecture.jpg)
 
 The project was developed on a local **VS Code** installation that used **docker containers** to host the **jupyter kernel** for python and a **PostgreSQL** database.
 
-![Development workflow](images/data_pipeline_placeholder.png)
-
-> **Note:** Replace `data_pipeline_placeholder.png` with your actual diagram file in the `images` folder.
+![development_workflow](images/development_workflow.jpg)
 
 ---
 
-### 📂 Installation
-1. Clone the repository:
+### 📂 Setup
+**1.** Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
-   cd your-repo
+   git clone git@github.com:sebasgw/bike-rental-starter-kit.git
    ```
 
-### 🪧 Usage
+**2.** Create .env file for postgres info in /docker that contains:
+   ```bash
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_DB=
+POSTGRES_HOST=
+POSTGRES_PORT=
+   ```
+
+**3.** Run docker commands to download and build images:
+   ```bash
+   cd bike-rental-starter-kit/docker
+   docker compose up --build -d
+   ```
+
+> **Note:** This step requires docker engine installed and running.
+
+### 🪧 General usage
 
 
-1. Run Jupyter notebooks: Open the notebooks provided in the repository to explore datasets, analyze data, and run queries.
+**1.** Install **VS Code** and the **Official Jupyter** extension.
 
-2. Connect to PostgreSQL database: Use your preferred client (DBeaver, pgAdmin, or Python scripts) to connect to the database and interact with the tables.
+**2.** Open the notebook provided in the repository and on the kernel options (section located at the top right) choose **Select Another Kernel** and type in **localhost:8888**.
 
-3. Experiment with ETL scripts: Modify or run the ETL pipelines included to practice transforming and loading data.
+**3.** Explore the dataset, analyze data and run queries at will.
 
-
-### 👤 Author
-
-[Your Name]
-
-Educational project for Codecademy Data Engineering Career Path
+**4.** Connect to PostgreSQL database: Use your preferred client to connect to the database and interact with the tables once the entire notebook is run (it creates the DB schema and inserts the data).
